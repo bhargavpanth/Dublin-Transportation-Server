@@ -30,3 +30,7 @@
 * Install dependencies with ```sudo npm install```
 * Build the project with ```npm run build```
 * Run the project with ```npm run start```
+
+### Architecture
+
+![Architecture](https://github.com/bhargavpanth/Dublin-Transportation-Server/blob/master/architecture.png)
