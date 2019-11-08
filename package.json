@@ -1,7 +1,7 @@
 {
   "name": "dublin_transport_server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Dublin transportation network API - Currently the API provides a bunch of data curated via Dublin-Transportation-pipeline project",
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=development mocha || test",
