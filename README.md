@@ -34,3 +34,6 @@
 ### Architecture
 
 ![Architecture](https://github.com/bhargavpanth/Dublin-Transportation-Server/blob/master/architecture.png)
+
+### Updates
+This repo will go under maintenance and will be upgraded to Typescript
