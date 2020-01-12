@@ -17,9 +17,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://gitlab.scss.tcd.ie/panthb/Dublin-Transport-API.git"
+    "url": "https://github.com/bhargavpanth/Dublin-Transportation-Server.git"
   },
-  "author": "Team 10",
+  "author": "Bhargav Panth",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
