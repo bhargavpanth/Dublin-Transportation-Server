@@ -27,9 +27,9 @@
 * Make sure to have ```Node.js``` and ```yarn``` installed
 * Clone the repository
 * ```cd Dublin-Transport-API/```
-* Install dependencies with ```npm install```
-* Build the project with ```npm run build```
-* Run the project with ```npm run start```
+* Install dependencies with ```yarn install```
+* Build the project with ```yarn run build```
+* Run the project with ```yarn run start```
 
 ### Architecture
 ![Architecture](https://github.com/bhargavpanth/Dublin-Transportation-Server/blob/master/architecture.png)
