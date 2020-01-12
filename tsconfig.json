@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      "lib": ["es7"],  
+      "allowJs": true,
+      "checkJs": true,
+      "outDir": "dist",
+      "strict": false,
+      "noUnusedLocals": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "esModuleInterop": true
+    },
+    "include": ["server", "test"],
+    "exclude": ["node_modules"]
+}
