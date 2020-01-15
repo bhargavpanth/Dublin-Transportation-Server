@@ -1,17 +1,18 @@
-import bodyParser from 'body-parser';
-import express from 'express';
-import mongoose from 'mongoose';
-import _ from 'lodash';
-import cookieParser from 'cookie-parser';
-import fs from 'fs';
-import methodOverride from 'method-override';
-import morgan from 'morgan';
-let logger = morgan('combined');
-import io from 'socket.io';
+import bodyParser from 'body-parser'
+import express from 'express'
+import mongoose from 'mongoose'
+import _ from 'lodash'
+import cookieParser from 'cookie-parser'
+import methodOverride from 'method-override'
+import morgan from 'morgan'
+import io from 'socket.io'
+
+let logger = morgan('combined')
 
 const app = express()
-	, server = require('http').createServer(app)
-  	, s_io = io.listen(server);
+const server = require('http').createServer(app)
+// enable socket
+// const s_io = io.listen(server)
 
 
 // Handle CORS
@@ -30,8 +31,8 @@ app.use(logger)
 
 
 // Initialize DB connection
-const env = process.env.NODE_ENV || "development"
-if (env === "development") {
+const env = process.env.NODE_ENV || 'development'
+if (env === 'development') {
 	try{
 		// connect to local Mongo connection
 		mongoose.connect('mongodb://localhost:27017/bus')
@@ -41,7 +42,7 @@ if (env === "development") {
 		console.log('MongoDB is not accessible [LOCAL]')
 	}
 }
-else if (env === "production") {
+else if (env === 'production') {
 	// connect to remote instance
 	try{
 		mongoose.connect('mongodb://localhost:27017/bus');
@@ -52,25 +53,23 @@ else if (env === "production") {
 }
 
 
-
+// Move away from this
 // Initialize Routes with Controllers
 var db = mongoose.connection.once('open', () => {
 	let routes = require('./routes.js');
 	_.forEach(routes, (controller, route) => {
 		console.log('Route : ' + route);
-		app.use(route, controller.default(app, route));
-	});
-});
-
-
+		app.use(route, controller.default(app, route))
+	})
+})
 
 // Start 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080
 app.listen(port, (err) => {
 	if (err) {
-		console.log(err);
+		console.error(err)
 	} else {
-		console.log(`App running on port ${port}`);
+		console.log(`App running on port ${port}`)
 	}
-});
+})
 
