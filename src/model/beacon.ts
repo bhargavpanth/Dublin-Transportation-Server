@@ -8,4 +8,4 @@ let BeaconSchema = new Schema({
 	collection: 'beacon'
 })
 
-export default BeaconSchema;
+export default BeaconSchema

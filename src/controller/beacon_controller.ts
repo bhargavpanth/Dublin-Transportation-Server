@@ -1,32 +1,25 @@
-import express from 'express';
+import express from 'express'
+import mongoose from 'mongoose'
+import beacon_schema from '../model/beacon.js'
 
-let router = express.Router();
-
-import mongoose from 'mongoose';
-
-// Beacon Schema
-const beacon_schema = require('../model/beacon.js');
+let router = express.Router()
 const beacon = mongoose.model('beacon', beacon_schema, 'beacon');
 
 
 var index = (app, route) => {
-
 	router.get('/', (req, res) => {
-		res.status(405);
-		
+		res.status(405)
 		res.json({
 			'status': 405,
 			'message': 'method not allowed'
-		});
-	});
+		})
+	})
 
 	router.post('/',  (req, res) => {
-
 		if (req.body.stop_num && req.body.counter) {
-			let stop = req.body.stop_num;
-			let counter = req.body.counter;
-
-			let update = new Promise ( (resolve, reject) => {
+			let stop = req.body.stop_num
+			let counter = req.body.counter
+			let update = new Promise ((resolve, reject) => {
 				beacon.findOneAndUpdate({
 					stop_id: stop
 				}, {
@@ -39,40 +32,36 @@ var index = (app, route) => {
 					new: true
 				},(err, data) => {
 					if (err) {
-						reject(err);
+						reject(err)
 					} else {
-						resolve(data);
+						resolve(data)
 					}
 				})
-			});
-
+			})
 			update.then( (data) => {
-				res.status(200);
+				res.status(200)
 				res.json({
 					'status': 200,
 					'message': data
-				});
+				})
 			})
-
 			update.catch( (err) => {
-				res.status(500);
+				res.status(500)
 				res.json({
 					'status': 500,
 					'message': 'internal server error'
-				});
-			});
-
+				})
+			})
 		} else {
-			res.status(405);
+			res.status(405)
 			res.json({
 				'status': 405,
 				'message': 'bad request'
-			});
+			})
 		}
+	})
 
-	});
-
-	return router;
+	return router
 }
 
-export default index;
+export default index
