@@ -1,7 +1,6 @@
-import express from 'express';
+import express from 'express'
 
 let router = express.Router();
-
 
 var index = (app, route) => {
 	router.get('/', (req, res) => {
@@ -9,10 +8,10 @@ var index = (app, route) => {
 			'status': 200,
 			'message': `base route`
 		});
-		res.end();
-	});
+		res.end()
+	})
 
-	return router;
+	return router
 }
 
-export default index;
+export default index
