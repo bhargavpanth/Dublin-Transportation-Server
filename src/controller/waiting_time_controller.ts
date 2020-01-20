@@ -7,6 +7,7 @@ const waiting_time = mongoose.model('waitingtimeanalysis', waiting_time_schema, 
 
 var index = (app, route) => {
 	router.get('/', (req, res) => {
+		// This makes no sense - rewrite
 		let results = new Promise((resolve, reject) => {
 			waiting_time.find({}, (err, data) => {
 				if (data) {
