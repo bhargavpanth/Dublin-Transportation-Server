@@ -5,15 +5,12 @@ import _ from 'lodash'
 import cookieParser from 'cookie-parser'
 import methodOverride from 'method-override'
 import morgan from 'morgan'
-import io from 'socket.io'
+// import io from 'socket.io'
 
 let logger = morgan('combined')
-
 const app = express()
-const server = require('http').createServer(app)
 // enable socket
 // const s_io = io.listen(server)
-
 
 // Handle CORS
 app.use((req, res, next) => {
