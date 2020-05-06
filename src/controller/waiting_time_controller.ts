@@ -1,9 +1,8 @@
 import express from 'express'
-import mongoose from 'mongoose'
-import waiting_time_schema from '../model/waiting_time.js'
+import schema from '../model'
 
+const { waiting_time } = schema()
 let router = express.Router()
-const waiting_time = mongoose.model('waitingtimeanalysis', waiting_time_schema, 'waitingtimeanalysis');
 
 var index = (app, route) => {
 	router.get('/', (req, res) => {
