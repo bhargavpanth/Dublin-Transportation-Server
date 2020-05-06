@@ -11,7 +11,7 @@ var index = (app, route) => {
 			// geojson middleware
 		} else {
 			let results = new Promise((resolve, reject) => {
-				dublin_bikes.find({}, (err, data) => {
+				return dublin_bikes.find({}, (err, data) => {
 					if (data) {
 						resolve(data);
 					} else {
