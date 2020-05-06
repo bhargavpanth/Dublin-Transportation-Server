@@ -1,15 +1,13 @@
 import express from 'express'
-import mongoose from 'mongoose'
-import bus_schema from '../model/bus.js'
+import schema from '../model'
 
+const { bus } = schema()
 let router = express.Router()
-const dublin_bus = mongoose.model('bus_update', bus_schema, 'bus_update')
-
 
 var index = (app, route) => {
 	router.get('/', (req, res) => {
 		let results = new Promise((resolve, reject) => {
-			dublin_bus.find({}, (err, data) => {
+			bus.find({}, (err, data) => {
 				if (data) {
 					resolve(data)
 				} else {

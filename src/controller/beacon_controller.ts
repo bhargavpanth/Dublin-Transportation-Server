@@ -1,10 +1,8 @@
 import express from 'express'
-import mongoose from 'mongoose'
-import beacon_schema from '../model/beacon.js'
+import schema from '../model'
 
+const { beacon } = schema()
 let router = express.Router()
-const beacon = mongoose.model('beacon', beacon_schema, 'beacon');
-
 
 var index = (app, route) => {
 	router.get('/', (req, res) => {

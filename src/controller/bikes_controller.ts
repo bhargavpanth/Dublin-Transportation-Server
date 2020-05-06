@@ -1,17 +1,16 @@
 import express from 'express'
-import mongoose from 'mongoose'
-import bikes_schema from '../model/bikes.js'
+import schema from '../model'
 
+const { bike } = schema()
 let router = express.Router()
-const dublin_bikes = mongoose.model('bikes_update', bikes_schema, 'bikes_update');
 
 var index = (app, route) => {
 	router.get('/', (req, res) => {
 		if (req.query.encode === 'geojson') {
 			// geojson middleware
 		} else {
-			let results = new Promise((resolve, reject) => {
-				return dublin_bikes.find({}, (err, data) => {
+			return new Promise((resolve, reject) => {
+				return bike.find({}, (err, data) => {
 					if (data) {
 						resolve(data);
 					} else {
