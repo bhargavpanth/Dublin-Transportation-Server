@@ -1,5 +1,4 @@
-import mongoose from 'mongoose'
-const { Schema } = mongoose
+import { Schema } from 'mongoose'
 
 let BikeSchema = new Schema({
 	_id : String,

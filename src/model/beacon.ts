@@ -1,5 +1,4 @@
-import mongoose from 'mongoose'
-const { Schema } = mongoose
+import { Schema } from 'mongoose'
 
 let BeaconSchema = new Schema({
 	stop_id : String,

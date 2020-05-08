@@ -3,11 +3,13 @@ import waiting_time_schema from './waiting_time'
 import bike_schema from './bikes'
 import bus_schema from './bus'
 import beacon_schema from './beacon'
+import analytics_schema from './analytics'
 
 export default function schema() {
     if (process.env.SOURCE === 'mongo') {
         // return all the mongo schemas
         return {
+            analytics_schema: mongoose.model('analytics', analytics_schema, 'analytics'),
             waiting_time: mongoose.model('waiting_time_analysis', waiting_time_schema, 'waiting_time_analysis'),
             bike: mongoose.model('bike_update', bike_schema, 'bike_update'),
             bus: mongoose.model('bus_update', bus_schema, 'bus_update'),
