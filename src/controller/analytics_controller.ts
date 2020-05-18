@@ -1,12 +1,9 @@
 import express from 'express'
-import http from 'http'
-import socketio from 'socket.io'
 import schema from '../model'
 
 const { analytics_schema } = schema()
+const app = express()
 let router = express.Router()
-
-const io = socketio
 
 const index = (app, route) => {
     // Add socket.io
@@ -16,6 +13,4 @@ const index = (app, route) => {
         // of the location where the users are expecting the
         // analytics from
     })
-
-
 }
