@@ -1,6 +1,5 @@
 node_modules/
 *.pem
 package-lock.json
-.nyc_output/
 /build/
 dump.json
