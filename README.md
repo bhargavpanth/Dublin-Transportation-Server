@@ -1,38 +1,14 @@
-## API Stack
+## Dublin Transportation REST API
 
-```
-- server
-	|
-	--controller
-		|
-		--dashboard_controller.js
-		|
-		--index_controller.js
-		|
-		--index.js
-	|
-	--index.js
-	|
-	--routes.js
-- test
-	|
-	--dashboard.js
-	|
-	--index.js
-- .babelrc
-- .gitignore
-- package.json
-```
-
-* Make sure to have ```Node.js``` and ```yarn``` installed
+* Make sure to have `Node.js` and `yarn` installed
 * Clone the repository
-* ```cd Dublin-Transport-API/```
-* Install dependencies with ```yarn install```
-* Build the project with ```yarn run build```
-* Run the project with ```yarn run start```
+* `cd Dublin-Transport-API/`
+* Install dependencies with `yarn install`
+* Build the project with `yarn run build`
+* Run the project with `yarn run start`
 
 ### Architecture
 ![Architecture](https://github.com/bhargavpanth/Dublin-Transportation-Server/blob/master/architecture.png)
 
 ### Updates
-This repo is under maintenance and will be upgraded shortly
+This repo has been modified recently. Please make sure you pull the latest master. And please also note that `socket.io` and `cassandra` support will be introduced shortly.
