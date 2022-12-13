@@ -39,7 +39,7 @@
     "cassandra-driver": "^4.6.1",
     "cookie-parser": "^1.4.3",
     "cookieparser": "^0.1.0",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "fetch-promise": "^1.0.2",
     "fs": "0.0.1-security",
     "geojson": "^0.5.0",
